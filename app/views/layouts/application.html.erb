@@ -16,7 +16,11 @@
      				<%= msg %>
      			</div>
 		<% end %>
-
+		<% if user_signed_in? %>
+			<div class="alert alert-info" role="alert">Current user: <%= current_user.email %></div>
+		<% else %>
+			<div class="alert alert-info" role="alert">No active user</div>
+		<% end %>
 		<%= yield %>
 	</div>
 
